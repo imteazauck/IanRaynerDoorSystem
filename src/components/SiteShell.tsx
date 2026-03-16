@@ -35,17 +35,17 @@ export default function SiteShell({ children }: { children: ReactNode }) {
           </Link>
 
           <nav className="hidden items-center gap-8 text-sm font-medium lg:flex">
-            <NavLink to="/" className="rounded-2xl relative flex items-center jusify-center p-2 text-[#40584A] transition hover:bg-[#7c817e]">
+            <NavLink to="/" className="rounded-2xl relative flex items-center jusify-center p-2 text-[#40584A] transition hover:bg-[#070707]">
               Home
             </NavLink>
-            <NavLink to="/shop" className="rounded-2xl relative flex items-center jusify-center p-2 text-[#40584A] transition hover:bg-[#7c817e]">
+            <NavLink to="/shop" className="rounded-2xl relative flex items-center jusify-center p-2 text-[#40584A] transition hover:bg-[#070707]">
               Doors
             </NavLink>
-            <NavLink to="/help-centre" className="rounded-2xl relative flex items-center jusify-center p-2 text-[#40584A] transition hover:bg-[#7c817e]">
+            <NavLink to="/help-centre" className="rounded-2xl relative flex items-center jusify-center p-2 text-[#40584A] transition hover:bg-[#070707]">
               Help Centre
             </NavLink>
             
-            <NavLink to="/contact" className="rounded-2xl relative flex items-center justify-center p-2 text-[#40584A] transition hover:bg-[#7c817e]">            
+            <NavLink to="/contact" className="rounded-2xl relative flex items-center justify-center p-2 text-[#40584A] transition hover:bg-[#070707]">            
               Contact
             </NavLink>
           </nav>
@@ -53,13 +53,13 @@ export default function SiteShell({ children }: { children: ReactNode }) {
           <div className="flex items-center gap-3">
             <NavLink
               to="/shop"
-              className="rounded-2xl px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#7c817e]"
+              className="rounded-2xl px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#070707]"
             >
               Order Online
             </NavLink>
           <button
             onClick={openBasket}
-            className="relative flex items-center justify-center p-2 text-[#40584A] transition hover:bg-[#7c817e]"
+            className="relative flex items-center justify-center p-2 text-[#40584A] transition hover:bg-[#070707]"
           >
             <ShoppingCart size={22} strokeWidth={1.8} />
 
