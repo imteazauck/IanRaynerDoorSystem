@@ -7,11 +7,11 @@ import { ShoppingCart } from "lucide-react";
 export default function SiteShell({ children }: { children: ReactNode }) {
   const { itemCount, openBasket } = useCart();
 
-  const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-    [
-      "transition",
-      isActive ? "text-[#40584A]" : "text-[#4B4F4C] hover:text-[#40584A]",
-    ].join(" ");
+  // const navLinkClass = ({ isActive }: { isActive: boolean }) =>
+  //   [
+  //     "transition",
+  //     isActive ? "text-[#40584A]" : "text-[#4B4F4C] hover:text-[#40584A]",
+  //   ].join(" ");
 
   return (
     <div className="min-h-screen bg-white text-[#4B4F4C]">
