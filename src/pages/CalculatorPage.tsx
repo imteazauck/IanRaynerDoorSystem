@@ -36,7 +36,7 @@ export default function CalculatorPage({ jobs }: CalculatorPageProps) {
       </div>
 
 <div className="panel">
-  <CalculatorPage job={job} />
+  <CalculatorPage jobs={jobs} />
 </div>
 
     </div>
