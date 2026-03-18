@@ -27,14 +27,11 @@ jobs:
       - name: Build app
         run: npm run build
 
-      - name: Show build output
-        run: ls -la dist && find dist -maxdepth 2 -type f | head -50
-
-      - name: Upload artifact for deployment job
+      - name: Upload dist only
         uses: actions/upload-artifact@v4
         with:
-          name: node-app
-          path: dist
+          name: site
+          path: ./dist/*
 
   deploy:
     runs-on: ubuntu-latest
@@ -44,14 +41,11 @@ jobs:
       contents: read
 
     steps:
-      - name: Download artifact from build job
+      - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          name: node-app
-          path: dist
-
-      - name: Show downloaded artifact
-        run: ls -la dist && find dist -maxdepth 2 -type f | head -50
+          name: site
+          path: ./site
 
       - name: Login to Azure
         uses: azure/login@v2
@@ -60,10 +54,9 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_91762E850A114853B35BCCF5171BF1F8 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_7927FA78B4FC4D3BBF5E84E8F04C9804 }}
 
-      - name: Deploy to Azure Web App
-        id: deploy-to-webapp
+      - name: Deploy static files
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'maxiumdoors'
           slot-name: 'Production'
-          package: dist
+          package: ./site
