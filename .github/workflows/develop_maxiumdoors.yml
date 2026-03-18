@@ -27,6 +27,9 @@ jobs:
       - name: Build app
         run: npm run build
 
+      - name: Show build output
+        run: ls -la dist && find dist -maxdepth 2 -type f | head -50
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
@@ -46,6 +49,9 @@ jobs:
         with:
           name: node-app
           path: dist
+
+      - name: Show downloaded artifact
+        run: ls -la dist && find dist -maxdepth 2 -type f | head -50
 
       - name: Login to Azure
         uses: azure/login@v2
