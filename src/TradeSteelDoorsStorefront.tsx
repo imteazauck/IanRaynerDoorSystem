@@ -6,22 +6,33 @@ import HelpCentrePage from "./pages/HelpCentrePage";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
 import ShopPage from "./pages/ShopPage";
+import RoleChoicePage from "./pages/RoleChoicePage";
+import PortalLoginPage from "./pages/PortalLoginPage";
+import PortalDashboardPage from "./pages/PortalDashboardPage";
 
 export default function TradeSteelDoorsStorefront() {
   return (
     <BrowserRouter>
       <CartProvider>
-        <div className="min-h-screen bg-white text-[#4B4F4C]">
-          <SiteShell>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/shop" element={<ShopPage />} />
-              <Route path="/product/:slug" element={<ProductPage />} />
-              <Route path="/help-centre" element={<HelpCentrePage />} />
-              <Route path="/contact" element={<ContactPage />} />
-            </Routes>
-          </SiteShell>
-        </div>
+        <SiteShell>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/doors" element={<ShopPage />} />
+            <Route path="/doors/:slug" element={<ProductPage />} />
+            <Route path="/help-centre" element={<HelpCentrePage />} />
+            <Route path="/contact" element={<ContactPage />} />
+
+            <Route path="/order-online" element={<RoleChoicePage />} />
+            <Route
+              path="/portal/login/:role"
+              element={<PortalLoginPage />}
+            />
+            <Route
+              path="/portal/dashboard"
+              element={<PortalDashboardPage />}
+            />
+          </Routes>
+        </SiteShell>
       </CartProvider>
     </BrowserRouter>
   );

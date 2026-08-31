@@ -52,9 +52,8 @@ export default function SiteShell({ children }: { children: ReactNode }) {
 
           <div className="flex items-center gap-3">
             <NavLink
-              to="/shop"
-              className="rounded-2xl px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#070707]"
-            >
+              to="/order-online"
+              className="rounded-full bg-black px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90">
               Order Online
             </NavLink>
           <button
